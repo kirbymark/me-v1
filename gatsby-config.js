@@ -1,6 +1,17 @@
 require(`dotenv`).config()
+const remarkGfm = require(`remark-gfm`)
+const { rehypeMetaAsAttributes } = require(`@lekoarts/rehype-meta-as-attributes`)
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+
+const wrapESMPlugin = name =>
+  function wrapESM(opts) {
+    return async (...args) => {
+      const mod = await import(name)
+      const plugin = mod.default(opts)
+      return plugin(...args)
+    }
+  }
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -24,10 +35,15 @@ module.exports = {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
+        mdx: false,
         navigation: [
           {
             title: `Blog`,
             slug: `/blog`,
+          },
+          {
+            title: `Projects`,
+            slug: `/projects`,
           },
           {
             title: `About`,
@@ -50,6 +66,27 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        mdxOptions: {
+          remarkPlugins: [remarkGfm, wrapESMPlugin(`remark-emoji`)],
+          rehypePlugins: [rehypeMetaAsAttributes],
+        },
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              quality: 90,
+              linkImagesToOriginal: false,
+              backgroundColor: `transparent`,
+            },
+          },
+        ],
       },
     },
     {

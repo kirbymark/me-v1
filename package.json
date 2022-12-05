@@ -20,10 +20,13 @@
     "gatsby": "^5.0.0",
     "gatsby-plugin-feed": "^5.0.0",
     "gatsby-plugin-manifest": "^5.0.0",
+    "gatsby-plugin-mdx": "^5.2.0",
     "gatsby-plugin-sitemap": "^6.0.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
+    "gatsby-remark-images": "^7.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "remark-emoji": "^3.0.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

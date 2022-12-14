@@ -4,8 +4,8 @@ import tailwind from "@theme-ui/preset-tailwind"
 const myColors = {
     slate: ['', '#f8fafc','#f1f5f9','#e2e8f0','#cbd5e1','#94a3b8','#64748b','#475569','#334155','#1e293b','#0f172a'],
     stone: ['', '#fafaf9','#f5f5f4','#e7e5e4','#d6d3d1','#a8a29e','#78716c','#57534e','#44403c','#292524','#1c1917'],
+    blues: ['#d7f2ff', '#b3dcf2', '#91c5e6', '#72b0d9', '#569acc', '#2a74b3', '#0d5499', '#003e80', '#003066', '#00234d', '#001733', '#000b19', '#000000'],
 }
-
 
 const theme = merge(tailwind, {
   config: {
@@ -13,22 +13,25 @@ const theme = merge(tailwind, {
     useColorSchemeMediaQuery: `system`,
   },
   colors: {
-    primary: tailwind.colors.purple[7],
+    primary: tailwind.colors.purple[8],
     secondary: `#5f6c80`,
     toggleIcon: tailwind.colors.gray[8],
     heading: tailwind.colors.black,
-    divide: tailwind.colors.gray[4],
+    headingOther: tailwind.colors.blue[5],
+    divide: tailwind.colors.blue[6],
     muted: tailwind.colors.gray[2],
+    text: tailwind.colors.black,
     background: `#e4e9f3`,
     modes: {
       dark: {
-        text: tailwind.colors.gray[4],
-        primary: tailwind.colors.purple[4],
+        text: tailwind.colors.white,
+        primary: tailwind.colors.purple[5],
         secondary: `#8a9ab0`,
         toggleIcon: tailwind.colors.gray[4],
         background: `#11192a`,
         heading: tailwind.colors.white,
-        divide: tailwind.colors.gray[8],
+        headingOther: tailwind.colors.blue[8],
+        divide: tailwind.colors.blue[8],
         muted: tailwind.colors.gray[8],
       },
     },

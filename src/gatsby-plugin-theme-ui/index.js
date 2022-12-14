@@ -19,13 +19,14 @@ const theme = merge(tailwind, {
     heading: tailwind.colors.black,
     divide: tailwind.colors.gray[4],
     muted: tailwind.colors.gray[2],
+    background: `#e4e9f3`,
     modes: {
       dark: {
         text: tailwind.colors.gray[4],
         primary: tailwind.colors.purple[4],
         secondary: `#8a9ab0`,
         toggleIcon: tailwind.colors.gray[4],
-        background: `#1A202C`,
+        background: `#11192a`,
         heading: tailwind.colors.white,
         divide: tailwind.colors.gray[8],
         muted: tailwind.colors.gray[8],

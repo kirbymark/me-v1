@@ -7,6 +7,52 @@ const myColors = {
     blues: ['#d7f2ff', '#b3dcf2', '#91c5e6', '#72b0d9', '#569acc', '#2a74b3', '#0d5499', '#003e80', '#003066', '#00234d', '#001733', '#000b19', '#000000'],
 }
 
+const variants = {
+  alerts: {
+    success: {},
+    hint: {},
+    warning: {},
+    info: {},
+    danger: {},
+  },
+  audio: {
+    specimens: {},
+  },
+  badge: {
+    specimens: {},
+  },
+  tables: {
+    borderRadius: {},
+    shadow: {},
+    space: {},
+    specimens: {},
+  },
+  families: {
+    specimens: {},
+  },
+  rows: {
+    specimens: {},
+  },
+  swatches: {
+    specimens: {},
+  },
+  download: {
+    specimens: {},
+  },
+  typography: {
+    fontFamily: {},
+    fontSize: {},
+    fontWeight: {},
+    heading: {},
+  },
+  codeStyles: {
+    default: {},
+  },
+  video: {
+    specimens: {},
+  },
+}
+
 const theme = merge(tailwind, {
   config: {
     initialColorModeName: `light`,
@@ -225,6 +271,7 @@ const theme = merge(tailwind, {
       color: `text`,
     },
   },
+  ...variants,
 })
 
 export default theme

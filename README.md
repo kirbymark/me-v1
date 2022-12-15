@@ -227,3 +227,5 @@ Please star this project, share it on Social Media or consider supporting me on 
 
 # Themes
 [LekoArts/gatsby-themes](https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog)
+
+[also see Guides here](https://dev.to/ekafyi/learning-gatsby-themes-introduction-1gje)

@@ -13,7 +13,7 @@ const theme = merge(tailwind, {
     useColorSchemeMediaQuery: `system`,
   },
   colors: {
-    primary: tailwind.colors.purple[8],
+    primary: myColors.blues[6],
     secondary: myColors.blues[5],
     toggleIcon: tailwind.colors.gray[8],
     heading: tailwind.colors.black,
@@ -25,7 +25,7 @@ const theme = merge(tailwind, {
     modes: {
       dark: {
         text: tailwind.colors.white,
-        primary: tailwind.colors.purple[5],
+        primary: myColors.blues[4],
         secondary: myColors.blues[3],
         toggleIcon: tailwind.colors.gray[4],
         background: myColors.blues[11],

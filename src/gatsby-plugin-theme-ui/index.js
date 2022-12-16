@@ -210,7 +210,24 @@ const theme = merge(tailwind, {
       },
     },
   },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'text',
+      }
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
+  },
   text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
     heading: {
       fontFamily: `heading`,
       fontWeight: `heading`,

@@ -31,3 +31,41 @@ from [Prince Wilson - Building Custom Components with MDX](https://www.youtube.c
   />
 
 <br />
+
+
+<Text variant='caps'>Hello</Text>
+
+
+<Text
+  sx={{
+    fontSize: 1,
+    fontWeight: 'bold',
+    display: 'block'
+  }}
+>
+  How's it going?
+</Text>
+
+
+<Button variant='secondary'>Boop</Button>
+
+<Button mr={2}>Beep</Button>
+<Button  
+  onClick={() => { 
+    console.log('You\'re an amazing person!')
+  }}
+  sx={{
+      appearance: 'none',
+      display: 'inline-block',
+      textAlign: 'center',
+      lineHeight: 'inherit',
+      textDecoration: 'none',
+      fontSize: 'inherit',
+      fontWeight: 'bold',
+      ml: 200,
+      px: 5,
+      py: 5,
+      border: 4,
+      borderRadius: 56,
+    }}
+  >My Button</Button>

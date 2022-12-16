@@ -222,6 +222,14 @@ const theme = merge(tailwind, {
       color: 'background',
       bg: 'secondary',
     },
+    outline: {
+      color: 'primary',
+      bg: 'background',
+      '&:hover': {
+        bg: 'primary',
+        color: 'background',
+      }
+    },
   },
   text: {
     caps: {

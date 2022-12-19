@@ -1,0 +1,47 @@
+name: publish
+run-name: ${{ github.actor }} is publishing new version of  🚀
+on: [push]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - run: echo "🎉 Starting deployment - triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.1'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli
+
+      - name: Display package.json contents
+        run: |
+          more ${{ github.workspace }}/package.json
+
+      - name: Build
+        run: gatsby build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 0e78699430885c7dca7e77a0edb2ee66
+          projectName: kirbymark-dev-me-v1
+          directory: public
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."

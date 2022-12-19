@@ -40,7 +40,7 @@ Site is now running at `http://localhost:8000`!
 
 
 
-## Helpful links  
+## :link: Helpful links  
 [theme author - LekoArts/gatsby-themes](https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog)
 
 [also see Guides here](https://dev.to/ekafyi/learning-gatsby-themes-introduction-1gje)

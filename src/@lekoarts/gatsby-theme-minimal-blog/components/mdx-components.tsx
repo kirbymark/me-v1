@@ -26,7 +26,7 @@ const MdxComponents = {
 			{children}
 		</ExternalLink>
 	),
-  Card: ({image, imageText="image text", title, text, href, ...props}) => (
+  Card: ({image, imageText="image text", title, children, href, ...props}) => (
     
           <Link href={href}>
             <Card {...props}>
@@ -37,7 +37,7 @@ const MdxComponents = {
                     <Heading as='h1' sx={{color: 'primary', ml: 3, mr: 4, my: 2 }}>{title}</Heading>
                   </Box>
                 </Box>
-                <Paragraph variant="block">{text}</Paragraph>
+                  {children}
                 </Box>
             </Card>
           </Link>

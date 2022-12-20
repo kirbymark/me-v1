@@ -297,10 +297,9 @@ const theme = merge(tailwind, {
       color: `primary`,
       border: '2px solid',
       borderColor: 'cardoutline',
-      boxShadow: '3px 3px 3px 2px rgba(128,128,128,0.3)',
       ":hover": {
-        boxShadow: '3px 3px 3px 2px rgba(128,128,128,0.6)',
         color: `secondary`,
+        border: '3px solid',
       },
     },
     compact: {
@@ -332,6 +331,15 @@ const theme = merge(tailwind, {
       fontSize: [1, 2, 3],
       color: `text`,
     },
+    card: {
+      fontWeight: 'bold',
+      fontSize: 2,
+      textDecorationLine: 'none',
+      ":hover": {
+        color: `heading`,
+        textDecoration: `underline`,
+      },
+    }
   },
   ...variants,
 })

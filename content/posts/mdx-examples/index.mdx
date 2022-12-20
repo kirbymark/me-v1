@@ -1,25 +1,30 @@
 ---
-title: "MDX Examples"
+title: "My MDX Examples"
 date: 2022-12-15
 tags:
   - Code
   - MDX
 ---
+import nyc from "./nyc.jpg";
 
-## Some Examples
 
-from [Prince Wilson - Building Custom Components with MDX](https://www.youtube.com/watch?v=-xusVshCZ3M)
+#### A Button which sends message to console
+- from [Prince Wilson - Building Custom Components with MDX](https://www.youtube.com/watch?v=-xusVshCZ3M)
 
-<button onClick={() => { 
+  <button onClick={() => { 
     console.log('You\'re an amazing person!')
     }}>
     Send a message to the console
-</button>
+  </button>
 
 
+---
+#### A quote
 > "Your greatest contribution to humanity is your own self-realization. As you uplift yourself, you uplift everyone else around you."  - Dandapani
 
 
+---
+#### Some text
 <Text
     children={`Mark Kirby.  `}
     sx={{ fontSize: [5, 5, 6], fontWeight: `bold`, color: `heading`, lineSpacing: `1.0` }}
@@ -33,9 +38,13 @@ from [Prince Wilson - Building Custom Components with MDX](https://www.youtube.c
 <br />
 
 
+---
+#### Text forced to Caps with variant
 <Text variant='caps'>Hello</Text>
 
 
+---
+#### More text formatting
 <Text
   sx={{
     fontSize: 1,
@@ -47,6 +56,8 @@ from [Prince Wilson - Building Custom Components with MDX](https://www.youtube.c
 </Text>
 
 
+---
+#### some buttons
 <Button variant='outline'>Boop</Button>
 
 <Button mr={2}>Beep</Button>
@@ -69,3 +80,10 @@ from [Prince Wilson - Building Custom Components with MDX](https://www.youtube.c
       borderRadius: 56,
     }}
   >My Button</Button>
+
+---
+#### an Image
+<Image src={nyc} alt="New York City" sx={{maxWidth: 256,}} />
+
+#### an Image as avatar
+<Image variant='avatar' src={nyc} alt="New York City" />

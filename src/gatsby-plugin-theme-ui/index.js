@@ -68,6 +68,8 @@ const theme = merge(tailwind, {
     muted: tailwind.colors.gray[2],
     text: tailwind.colors.black,
     background: tailwind.colors.white,
+    cardbackground: myColors.blues[0],
+    cardoutline: myColors.blues[1],
     modes: {
       dark: {
         text: tailwind.colors.white,
@@ -75,6 +77,8 @@ const theme = merge(tailwind, {
         secondary: myColors.blues[3],
         toggleIcon: tailwind.colors.gray[4],
         background: myColors.blues[11],
+        cardbackground: myColors.blues[10],
+        cardoutline: myColors.blues[9],
         heading: tailwind.colors.white,
         headingOther: myColors.blues[6],
         divide: myColors.blues[5],
@@ -237,10 +241,8 @@ const theme = merge(tailwind, {
       letterSpacing: '0.2em',
     },
     heading: {
-      fontFamily: `heading`,
-      fontWeight: `heading`,
-      lineHeight: `heading`,
-      color: `heading`,
+      fontWeight: `600`,
+      color: `primary`,
     },
   },
   copyButton: {
@@ -277,6 +279,41 @@ const theme = merge(tailwind, {
       borderTopWidth: `1px`,
       borderTopColor: `divide`,
       pt: 3,
+    },
+  },
+  images: {
+    avatar: {
+      width: 48,
+      height: 48,
+      borderRadius: 99999,
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      mb: 3, mr: 3,
+      backgroundColor: `cardbackground`,
+      borderRadius: 4,
+      color: `primary`,
+      border: '2px solid',
+      borderColor: 'cardoutline',
+      boxShadow: '3px 3px 3px 2px rgba(128,128,128,0.3)',
+      ":hover": {
+        boxShadow: '3px 3px 3px 2px rgba(128,128,128,0.6)',
+        color: `secondary`,
+      },
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 5,
+      color: `secondary`,
+      border: '1px solid',
+      borderColor: 'cardoutline',
+      boxShadow: '3px 3px 3px 2px rgba(128,128,128,0.3)',
+      ":hover": {
+        boxShadow: '3px 3px 3px 2px rgba(128,128,128,0.6)',
+        color: `secondary`,
+      },
     },
   },
   links: {

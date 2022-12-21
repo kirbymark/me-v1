@@ -51,6 +51,7 @@ jobs:
         run: | 
           if [[ $DEPLOY_TO == 'master' ]]; then
             echo "DEPLOY_TO=main" >> $GITHUB_ENV
+          fi
 
       - name: Output branch name
         run: |

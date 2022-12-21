@@ -30,6 +30,11 @@ const MdxComponents = {
       <ButtonThemeUI {...props} />
     </Link>
   ),
+  ExternalButton: ({href, ...props}) => (
+    <ExternalLink href={href}>
+      <ButtonThemeUI {...props} />
+    </ExternalLink>
+  ),
   Card: ({image, imageText="image text", title, children, href, ...props}) => (
     
           <Link href={href}>

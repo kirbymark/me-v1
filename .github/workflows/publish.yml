@@ -44,7 +44,7 @@ jobs:
           accountId: 0e78699430885c7dca7e77a0edb2ee66
           projectName: kirbymark-dev-me-v1
           directory: public
-          branch: master
+          branch: main
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 

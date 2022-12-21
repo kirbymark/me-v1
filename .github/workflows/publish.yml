@@ -49,7 +49,7 @@ jobs:
 
       - name: Correct DEPLOY_TO if branch is master 
         run: | 
-          if [[ $DEPLOY_TO == 'check-output-of-github-actions' ]]; then
+          if [[ $DEPLOY_TO == 'master' ]]; then
             echo "DEPLOY_TO=main" >> $GITHUB_ENV
           fi
 

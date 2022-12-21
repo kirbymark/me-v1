@@ -47,6 +47,11 @@ jobs:
         run: |
           echo "DEPLOY_TO=${{steps.extract_branch.outputs.branch}}" >> $GITHUB_ENV
 
+      - name: Correct DEPLOY_TO if branch is master 
+        run: | 
+          if [[ $DEPLOY_TO == 'master' ]]; then
+            echo "DEPLOY_TO=main" >> $GITHUB_ENV
+
       - name: Output branch name
         run: |
           echo "branch: ${{steps.extract_branch.outputs.branch}}"

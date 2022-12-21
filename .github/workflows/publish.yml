@@ -31,8 +31,10 @@ jobs:
         run: |
           more ${{ github.workspace }}/package.json
 
-      - name: Clean Build
+      - name: Clean any old files
         run: gatsby clean
+      
+      - name: Build 
         run: gatsby build
 
       - name: Publish to Cloudflare Pages

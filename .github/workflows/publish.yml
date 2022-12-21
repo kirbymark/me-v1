@@ -38,14 +38,17 @@ jobs:
         run: gatsby build
 
       - name: Publish to Cloudflare Pages
+        id: publish
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 0e78699430885c7dca7e77a0edb2ee66
           projectName: kirbymark-dev-me-v1
           directory: public
-          branch: main
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: show output
+        run: echo "${{steps.publish.outputs.environment}}"
 
       - run: echo "🍏 This job's status is ${{ job.status }}."

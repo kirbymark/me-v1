@@ -43,10 +43,14 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
+      - name: Set DEPLOY_TO varible
+        run: |
+          echo "DEPLOY_TO=${{steps.extract_branch.outputs.branch}}" >> $GITHUB_ENV
+
       - name: Output branch name
         run: |
           echo "branch: ${{steps.extract_branch.outputs.branch}}"
-          echo "barnch2: ${GITHUB_HEAD_REF}"
+          echo "deploy: ${DEPLOY_TO}"
 
       - name: Publish to Cloudflare Pages
         id: publish

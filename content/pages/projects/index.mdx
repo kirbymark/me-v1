@@ -2,23 +2,16 @@
 title: Projects
 slug: "/projects"
 ---
-import nyc from "./nyc.jpg";
+import server from "./server.jpg";
 
-Welcome to the projects page! Below are links to projects I'm currently working on. Please reach out if you have any questions or would like to share ideas and colloborate.
+... projects I'm currently working on. 
+
+Please reach out if you have any questions or would like to share ideas and colloborate.
 
 <Flex>
    <Card 
     variant="primary" 
-    image={nyc} 
-    imageText="satellite view of new york city" 
-    title="My Homelab"
-    href="/homelab"
-    sx={{maxWidth: 500, }}>
-         My homelab based on [XCP.ng](https://xcp-ng.org/) and [Kubernetes](https://kubernetes.io/) 
-    </Card>
-   <Card 
-    variant="primary" 
-    image={nyc} 
+    image={server} 
     imageText="satellite view of new york city" 
     title="My Homelab"
     href="/homelab"
@@ -28,17 +21,3 @@ Welcome to the projects page! Below are links to projects I'm currently working 
 
 </Flex>
 
----
-<div
-  sx={{
-    display: 'grid',
-    gridGap: 3,
-    gridTemplateColumns: `repeat(auto-fit, minmax(128px, 1fr))`,
-  }}>
-  <div>One</div>
-  <div>Two</div>
-  <div>Three</div>
-  <div>Four</div>
-</div>
----
-<Image src={nyc} alt="New York City" sx={{maxWidth: 256,}} />

@@ -1,6 +1,7 @@
 name: publish
 run-name: ${{ github.actor }} is publishing new version of  🚀
 on: [push]
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -37,15 +38,43 @@ jobs:
       - name: Build 
         run: gatsby build
 
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Set DEPLOY_TO varible
+        run: |
+          echo "DEPLOY_TO=${{steps.extract_branch.outputs.branch}}" >> $GITHUB_ENV
+
+      - name: Correct DEPLOY_TO if branch is master 
+        run: | 
+          if [[ $DEPLOY_TO == 'master' ]]; then
+            echo "DEPLOY_TO=main" >> $GITHUB_ENV
+          fi
+
+      - name: Output branch name
+        run: |
+          echo "branch: ${{steps.extract_branch.outputs.branch}}"
+          echo "deploy: ${DEPLOY_TO}"
+
       - name: Publish to Cloudflare Pages
+        id: publish
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 0e78699430885c7dca7e77a0edb2ee66
           projectName: kirbymark-dev-me-v1
           directory: public
-          branch: main
+          branch: ${{ env.DEPLOY_TO }}
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Show Page-Action Output
+        run: | 
+          echo "enviroment: ${{steps.publish.outputs.environment}}"
+          echo "url: ${{steps.publish.outputs.url}}"
+          echo "alias: ${{steps.publish.outputs.alias}}"
+          echo "id: ${{steps.publish.outputs.id}}"
 
       - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -1,6 +1,7 @@
 name: publish
 run-name: ${{ github.actor }} is publishing new version of  🚀
 on: [push]
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -37,6 +38,16 @@ jobs:
       - name: Build 
         run: gatsby build
 
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Output branch name
+        run: |
+          echo "branch: ${{steps.extract_branch.outputs.branch}}"
+          echo "barnch2: ${GITHUB_HEAD_REF}"
+
       - name: Publish to Cloudflare Pages
         id: publish
         uses: cloudflare/pages-action@1
@@ -48,7 +59,11 @@ jobs:
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: show output
-        run: echo "${{steps.publish.outputs.environment}}"
+      - name: Show Page-Action Output
+        run: | 
+          echo "enviroment: ${{steps.publish.outputs.environment}}"
+          echo "url: ${{steps.publish.outputs.url}}"
+          echo "alias: ${{steps.publish.outputs.alias}}"
+          echo "id: ${{steps.publish.outputs.id}}"
 
       - run: echo "🍏 This job's status is ${{ job.status }}."

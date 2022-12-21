@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Text } from "theme-ui"
-import { Button } from "theme-ui"
+import { Button as ButtonThemeUI } from "theme-ui" 
 import { Link } from "theme-ui"
 import { Card } from "theme-ui"
 import { Image } from "theme-ui"
@@ -15,7 +15,6 @@ import ExternalLink from "../../../gatsby-plugin-theme-ui/components/ExternalLin
 
 const MdxComponents = {
   Text: (props: any) => <Text {...props} />,
-  Button: (props: any) => <Button {...props} />,
   Title: (props: any) => <Title {...props} />,
   Box: (props: any) => <Box {...props} />,
   Flex: (props: any) => <Flex {...props} />,
@@ -26,6 +25,16 @@ const MdxComponents = {
 			{children}
 		</ExternalLink>
 	),
+  Button: ({href, ...props}) => (
+    <Link href={href}>
+      <ButtonThemeUI {...props} />
+    </Link>
+  ),
+  ExternalButton: ({href, ...props}) => (
+    <ExternalLink href={href}>
+      <ButtonThemeUI {...props} />
+    </ExternalLink>
+  ),
   Card: ({image, imageText="image text", title, children, href, ...props}) => (
     
           <Link href={href}>

@@ -1,4 +1,8 @@
-require(`dotenv`).config()
+// require(`dotenv`).config()
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const remarkGfm = require(`remark-gfm`)
 const { rehypeMetaAsAttributes } = require(`@lekoarts/rehype-meta-as-attributes`)
 
@@ -21,7 +25,7 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitle: `kirbymark`,
+    siteTitle: process.env.GATSBY_SITE_TITLE,
     siteTitleAlt: `Mark Kirby`,
     siteHeadline: `Mark Kirby - Personal Site`,
     siteUrl: `https://me.kirbyware.dev`,
@@ -193,6 +197,18 @@ module.exports = {
         },
       },
     },
+
+    {
+			resolve: '@directus/gatsby-source-directus',
+			options: {
+				//url: `https://mvishy1b.directus.app/`, // Fill with your Directus instance address
+        url: process.env.GATSBY_DIRECTUS_URL,
+				auth: {
+					//token: 'rixiki6mPvXHHq57fKfAWfN1Ob5DYcsf', // You can use a static token from an user
+          token: process.env.DIRECTUS_STATIC_TOKEN,
+				},
+			},
+		},
 
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,

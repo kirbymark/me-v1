@@ -21,8 +21,6 @@ type BlogListItemProps = {
   showTags?: boolean
 }
 
-const dateYMD = new Date("2022-11-21 00:01")
-
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
   <Box mb={4}>
     <Link to={post.slug} sx={(t) => ({ ...t.styles?.a, fontSize: [1, 2, 3], color: `text` })}>

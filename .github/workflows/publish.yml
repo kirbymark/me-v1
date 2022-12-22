@@ -6,7 +6,7 @@ env:
   GATSBY_DIRECTUS_URL: ${{ secrets.GATSBY_DIRECTUS_URL }}
   GATSBY_SITE_TITLE: ${{ secrets.GATSBY_SITE_TITLE }}
 
-run-name: ${{ github.actor }} is publishing new version of  🚀
+run-name: ${{ github.actor }} is publishing new version  ${{ env.GATSBY_SITE_TITLE }}  🚀
 on: [push]
 
 jobs:

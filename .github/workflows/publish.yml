@@ -1,4 +1,11 @@
 name: publish
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  DIRECTUS_STATIC_TOKEN: ${{ secrets.DIRECTUS_STATIC_TOKEN }}
+  GATSBY_DIRECTUS_URL: ${{ secrets.GATSBY_DIRECTUS_URL }}
+  GATSBY_SITE_TITLE: ${{ secrets.GATSBY_SITE_TITLE }}
+
 run-name: ${{ github.actor }} is publishing new version of  🚀
 on: [push]
 
@@ -63,8 +70,8 @@ jobs:
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 0e78699430885c7dca7e77a0edb2ee66
-          projectName: kirbymark-dev-me-v1
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} 
+          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
           directory: public
           branch: ${{ env.DEPLOY_TO }}
           # Optional: Enable this if you want to have GitHub Deployments triggered

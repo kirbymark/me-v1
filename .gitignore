@@ -65,5 +65,6 @@ typings/
 public
 
 .idea
+.env*
 .vscode
 .DS_Store

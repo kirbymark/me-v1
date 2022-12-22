@@ -42,6 +42,10 @@ module.exports = {
         mdx: false,
         navigation: [
           {
+            title: `TechLinks`,
+            slug: `/techlinks`,
+          },
+          {
             title: `Blog`,
             slug: `/blog`,
           },

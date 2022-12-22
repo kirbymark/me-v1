@@ -24,7 +24,7 @@ module.exports = {
     siteTitle: `kirbymark`,
     siteTitleAlt: `Mark Kirby`,
     siteHeadline: `Mark Kirby - Personal Site`,
-    siteUrl: `https://minimal-blog.lekoarts.de`,
+    siteUrl: `https://me.kirbyware.dev`,
     siteDescription: `Mark Kirby's personal website.`,
     siteImage: `/banner.jpg`,
     author: `@kirbymark`,
@@ -32,28 +32,6 @@ module.exports = {
   trailingSlash: `never`,
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "G-467252NXZB",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "example.com",
-        // defaults to false
-        enableWebVitalsTracking: true,
-      },
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
@@ -114,7 +92,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
+        name: `kirbymark-dev`,
         short_name: `minimal-blog`,
         description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
         start_url: `/`,
@@ -179,11 +157,43 @@ module.exports = {
   }
 }`,
             output: `rss.xml`,
-            title: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
+            title: `kirbymark-dev`,
           },
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-MT85Y3YCYT", // Google Analytics / GA
+          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        // gtagConfig: {
+        //   optimize_id: "OPT_CONTAINER_ID",
+        //   anonymize_ip: true,
+        //   cookie_expires: 0,
+        // },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          // respectDNT: true,
+          // // Avoids sending pageview hits from custom paths
+          // exclude: ["/preview/**", "/do-not-track/me/too/"],
+          // Defaults to https://www.googletagmanager.com
+          // origin: "YOUR_SELF_HOSTED_ORIGIN",
+          // Delays processing pageview events on route update (in milliseconds)
+          // delayOnRouteUpdate: 0,
+        },
+      },
+    },
+
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {

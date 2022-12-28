@@ -42,7 +42,7 @@ module.exports = {
         mdx: false,
         navigation: [
           {
-            title: `TechLinks`,
+            title: `Techlinks`,
             slug: `/techlinks`,
           },
           {

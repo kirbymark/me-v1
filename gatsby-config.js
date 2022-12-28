@@ -25,8 +25,9 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitle: process.env.GATSBY_SITE_TITLE,
-    siteTitleAlt: `kirbymark's Techlinks`,
+    //siteTitle: process.env.GATSBY_SITE_TITLE,
+    siteTitle: `kirbymark techlinks`,
+    siteTitleAlt: `kirbymark techlinks`,
     siteHeadline: `Mark Kirby's Personal Site`,
     siteUrl: `https://www.kirbymark.dev`,
     siteDescription: `Mark Kirby's personal website.`,

@@ -26,9 +26,9 @@ module.exports = {
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
     siteTitle: process.env.GATSBY_SITE_TITLE,
-    siteTitleAlt: `kirbymark.dev`,
-    siteHeadline: `Mark Kirby - Personal Site`,
-    siteUrl: `https://me.kirbyware.dev`,
+    siteTitleAlt: `kirbymark's Techlinks`,
+    siteHeadline: `Mark Kirby's Personal Site`,
+    siteUrl: `https://www.kirbymark.dev`,
     siteDescription: `Mark Kirby's personal website.`,
     siteImage: `/banner.jpg`,
     author: `@kirbymark`,

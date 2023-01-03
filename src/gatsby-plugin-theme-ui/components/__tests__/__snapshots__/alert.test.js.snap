@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders correctly 1`] = `
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-13mufik-Alert{padding:1rem;border-radius:0.5rem;border-width:2px;border-style:solid;font-weight:500;margin-bottom:1rem;display:grid;grid-template-columns:35px 1fr;grid-column-gap:1rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:1rem;background-color:#f0fff4;border-color:#c6f6d5;color:#276749;}.css-13mufik-Alert svg{width:2rem;height:2rem;}.css-13mufik-Alert svg .primary{fill:currentColor;}.css-13mufik-Alert svg .secondary{fill:currentColor;}.css-13mufik-Alert .primary{color:#68d391;}.css-13mufik-Alert .secondary{color:#276749;}",
+      }
+    }
+    data-emotion="css 13mufik-Alert"
+  />,
+  <div
+    className="css-13mufik-Alert"
+    data-alert-type="success"
+  >
+    <svg
+      aria-hidden={true}
+      className="icon-check"
+      focusable="false"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        className="primary"
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        className="secondary"
+        d="M10 14.59l6.3-6.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l2.3 2.3z"
+      />
+    </svg>
+    Let's improve people's lives together!
+  </div>,
+]
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExternalLink renders correctly 1`] = `
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-n2y63d-ExternalLink{color:primary;text-decoration-line:none;}.css-n2y63d-ExternalLink:hover{text-decoration-line:underline;}",
+      }
+    }
+    data-emotion="css n2y63d-ExternalLink"
+  />,
+  <a
+    className="css-n2y63d-ExternalLink"
+    href="https://linuxhandbook.com/homelab/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Homelab
+  </a>,
+]
+`;

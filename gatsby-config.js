@@ -26,8 +26,8 @@ module.exports = {
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
     //siteTitle: process.env.GATSBY_SITE_TITLE,
-    siteTitle: `kirbymark techlinks`,
-    siteTitleAlt: `kirbymark techlinks`,
+    siteTitle: `kirbymark`,
+    siteTitleAlt: `kirbymark`,
     siteHeadline: `Mark Kirby's Personal Site`,
     siteUrl: `https://www.kirbymark.dev`,
     siteDescription: `Mark Kirby's personal website.`,
@@ -42,14 +42,14 @@ module.exports = {
       options: {
         mdx: false,
         navigation: [
-          {
-            title: `Techlinks`,
-            slug: `/techlinks`,
-          },
-          {
-            title: `Blog`,
-            slug: `/blog`,
-          },
+          // {
+          //   title: `Techlinks`,
+          //   slug: `/techlinks`,
+          // },
+          // {
+          //   title: `Blog`,
+          //   slug: `/blog`,
+          // },
           {
             title: `Projects`,
             slug: `/projects`,

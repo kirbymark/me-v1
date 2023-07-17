@@ -44,3 +44,8 @@ Site is now running at `http://localhost:8000`!
 [theme author - LekoArts/gatsby-themes](https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog)
 
 [also see Guides here](https://dev.to/ekafyi/learning-gatsby-themes-introduction-1gje)
+
+
+## need to add some environmental varibles
+export GATSBY_DIRECTUS_URL="http://localhost"
+export DIRECTUS_STATIC_TOKEN="{email: 'mark@kirbyware.com',password: 'pass',}"
